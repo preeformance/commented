@@ -116,15 +116,19 @@ app.put('/markUnComplete', (request, response) => {
 })
 //defines a DELETE request at /deleteItem endpoint and used to delete item
 app.delete('/deleteItem', (request, response) => {
+  //deletes from todos collection
     db.collection('todos').deleteOne({thing: request.body.itemFromJS})
+   //what the console and server will be alerted when it works
     .then(result => {
         console.log('Todo Deleted')
         response.json('Todo Deleted')
     })
+    //what the console will be alerted if there's an error
     .catch(error => console.error(error))
 
 })
-
+//connects app to PORT
 app.listen(process.env.PORT || PORT, ()=>{
+   //console log will show message if server is running
     console.log(`Server running on port ${PORT}`)
 })

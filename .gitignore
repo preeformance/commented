@@ -1,2 +1,3 @@
+# these are things that you don't want github to see. Keeps your secret stuff super secret. Shhhhh!
 node_modules
 .env

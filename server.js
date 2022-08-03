@@ -39,6 +39,7 @@ app.get('/',async (request, response)=>{
     const itemsLeft = await db.collection('todos').countDocuments({completed: false})
    //pass items that are "todoItems" and "itemsLeft"
     response.render('index.ejs', { items: todoItems, left: itemsLeft })
+   // this code was already commented out
     // db.collection('todos').find().toArray()
     // .then(data => {
     //     db.collection('todos').countDocuments({completed: false})
